@@ -8,8 +8,7 @@ Generate secure random secret keys in the Crockford base32 alphabet.
 By default, each key has 52 characters, no separators or timestamp, and
 260 random bits from the platform's cryptographically secure random source.
 
-> [!NOTE]
-> Oh yeah, and this thing is fast, see [benchmarks](#benchmarks)
+Oh yeah, and this thing is fast, see [benchmarks](#benchmarks)
 
 <p align="center">· · ·</p>
 
