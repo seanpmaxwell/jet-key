@@ -148,4 +148,5 @@ vite.config.ts.timestamp-*
 .jet-key-build.lock/
 /workflows
 
-/lib
+lib
+workflows
