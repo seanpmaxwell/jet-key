@@ -1,4 +1,4 @@
-# ✈️🔑 jet-key
+# ✈️🔑 &nbsp; jet-key
 
 [![npm version](https://img.shields.io/npm/v/jet-key?logo=npm&label=npm)](https://www.npmjs.com/package/jet-key)
 [![npm downloads](https://img.shields.io/npm/dm/jet-key?color=orange)](https://www.npmjs.com/package/jet-key)
