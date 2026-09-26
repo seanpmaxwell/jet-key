@@ -8,9 +8,13 @@ Generate secure random secret keys in the Crockford base32 alphabet.
 By default, each key has 52 characters, no separators or timestamp, and
 260 random bits from the platform's cryptographically secure random source.
 
+> [!NOTE]
+> Oh yeah, and this thing is fast, see [benchmarks](#benchmarks)
+
 <p align="center">· · ·</p>
 
-## ⚡ Installation / Basic usage
+
+## 🛠️ Installation / Basic usage
 
 ```sh
 npm install jet-key
@@ -47,6 +51,7 @@ jetKey(512); // 103 characters, 515 random bits
 
 <p align="center">· · ·</p>
 
+
 ## 📟 CLI
 
 ```sh
@@ -67,6 +72,22 @@ npx jet-key --version
 | `--version`  | `-v`  | Must be used alone.                                       |
 
 <p align="center">· · ·</p>
+
+
+## ⚡ Benchmarks
+
+Node v24.13.0; V8 13.6.233.17-node.37; darwin/arm64; Apple M4 Pro
+
+Median of 7 samples, at least 500 ms each, after 500 ms warmup per generator.
+
+| Generator                          | Characters | Random bits | Median ops/sec | ns/key | Relative throughput |
+| ----------------------------------- | ---------: | -----------: | -------------: | -----: | -------------------: |
+| jetKey()                            |         52 |          260 |      56,269,564 |   17.8 |                 1.00x |
+| Nano ID: Crockford, 52 chars        |         52 |          260 |      26,456,547 |   37.8 |                 0.47x |
+| crypto.randomBytes(33): base64url   |         44 |          264 |       1,675,458 |  596.9 |                 0.03x |
+
+<p align="center">· · ·</p>
+
 
 ## 🪪 License
 
