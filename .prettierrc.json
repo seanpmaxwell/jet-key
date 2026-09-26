@@ -1,0 +1,23 @@
+{
+  "plugins": ["@trivago/prettier-plugin-sort-imports"],
+  "importOrder": [
+    "<THIRD_PARTY_MODULES>",
+    "^@src/.*$",
+    "^@common/.*$",
+    "^@utilm/.*$",
+    "^@(logger|shell)$",
+    "^@test/.*$",
+    "^\\.\\.(?!/?$).*$",
+    "^\\./(?!.*/).*$",
+    "^\\./.+/.+$"
+  ],
+  "importOrderSeparation": true,
+  "importOrderSortSpecifiers": true,
+  "importOrderCaseInsensitive": true,
+  "printWidth": 80,
+  "tabWidth": 2,
+  "semi": true,
+  "singleQuote": true,
+  "trailingComma": "all",
+  "endOfLine": "lf"
+}
