@@ -1,0 +1,6 @@
+# Build output
+lib/
+node_modules/
+package-lock.json
+README.md 
+*.md

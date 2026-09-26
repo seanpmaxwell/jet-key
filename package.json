@@ -1,0 +1,91 @@
+{
+  "name": "jet-key",
+  "version": "1.0.0",
+  "publishConfig": {
+    "access": "public"
+  },
+  "description": "A fast cryptographically secure random secret key generator for JavaScript and TypeScript, using Crockford base32.",
+  "homepage": "https://github.com/seanpmaxwell/jet-key#readme",
+  "bugs": {
+    "url": "https://github.com/seanpmaxwell/jet-key/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/seanpmaxwell/jet-key.git"
+  },
+  "license": "MIT",
+  "author": "seanpmaxwell1",
+  "type": "module",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/index.d.ts",
+      "default": "./lib/index.js"
+    }
+  },
+  "bin": {
+    "jet-key": "lib/cli.js"
+  },
+  "scripts": {
+    "benchmarks": "npm run build && tsx playground/benchmark.ts",
+    "build": "tsx scripts/build.ts",
+    "commit": "npm run format && git add -A && git commit -m \"dev commit\"",
+    "commit:push": "npm run commit && git push",
+    "install:clean": "npm ci",
+    "lint": "eslint . --max-warnings 0",
+    "lint:fix": "eslint . --fix",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "prepublishOnly": "npm run typecheck && npm run lint && npm run format:check && npm test && npm run test:browser && npm run test:package",
+    "npm-data": "npm pack --dry-run --json",
+    "start": "node lib/cli.js",
+    "start:build": "npm run build && npm run start --",
+    "test": "vitest run",
+    "test:node": "vitest run test/node",
+    "test:browser": "vitest run --config vitest.browser.config.ts",
+    "typecheck": "tsc",
+    "prepack": "npm run build",
+    "test:package": "vitest run --config vitest.package.config.ts"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@trivago/prettier-plugin-sort-imports": "^6.0.2",
+    "@types/node": "^26.2.0",
+    "@vitest/browser": "^4.1.11",
+    "@vitest/browser-playwright": "^4.1.11",
+    "dts-bundle-generator": "^9.5.1",
+    "esbuild": "^0.28.2",
+    "eslint": "^10.7.0",
+    "eslint-config-prettier": "^10.1.8",
+    "globals": "^17.7.0",
+    "jiti": "^2.7.0",
+    "nanoid": "^6.0.1",
+    "playwright": "^1.63.0",
+    "prettier": "^3.9.5",
+    "tsx": "^4.23.11",
+    "typescript": "^6.0.3",
+    "typescript-eslint": "^8.65.0",
+    "vitest": "^4.1.10"
+  },
+  "engines": {
+    "node": ">=20.19"
+  },
+  "sideEffects": false,
+  "files": [
+    "lib",
+    "README.md",
+    "LICENSE"
+  ],
+  "keywords": [
+    "secret-key",
+    "key-generator",
+    "random-key",
+    "crockford",
+    "crockford-base32",
+    "base32",
+    "collision-resistant",
+    "typescript",
+    "csprng"
+  ]
+}

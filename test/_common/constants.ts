@@ -1,0 +1,3 @@
+export const ALPHABET = '0123456789ABCDEFGHJKMNPQRSTVWXYZ';
+export const KEY_LENGTH = 52;
+export const KEY_PATTERN = /^[0-9A-HJKMNP-TV-Z]{52}$/;
